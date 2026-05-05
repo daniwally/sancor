@@ -2005,24 +2005,26 @@
   /* === CÉLULA === */
   .celula { background: var(--bg-deep); padding: 90px 7vw; }
   .celula-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     object-position: center 40%;
     z-index: 0;
-    opacity: 0.42;
+    opacity: 0.38;
     pointer-events: none;
     filter: contrast(1.05) saturate(0.9);
   }
   .celula::after {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
     background:
-      linear-gradient(180deg, rgba(10,10,12,0.78) 0%, rgba(10,10,12,0.55) 30%, rgba(10,10,12,0.7) 70%, rgba(10,10,12,0.92) 100%),
-      linear-gradient(90deg, rgba(10,10,12,0.85) 0%, rgba(10,10,12,0.4) 45%, rgba(10,10,12,0.6) 100%),
+      linear-gradient(180deg, rgba(10,10,12,0.7) 0%, rgba(10,10,12,0.45) 30%, rgba(10,10,12,0.7) 70%, rgba(10,10,12,0.92) 100%),
+      linear-gradient(90deg, rgba(10,10,12,0.78) 0%, rgba(10,10,12,0.35) 45%, rgba(10,10,12,0.55) 100%),
       radial-gradient(ellipse 50% 40% at 65% 50%, rgba(229,9,127,0.05), transparent 70%);
     z-index: 1;
     pointer-events: none;
