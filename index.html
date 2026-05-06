@@ -36,6 +36,8 @@
     --soft-graphite: rgba(45,45,51,0.12);
 
     /* Legacy aliases — apuntan a rojo Sancor para que no rompa nada */
+    --magenta: #E5097F;
+    --ink: #F4F1E8;
     --cyan: #E5097F;
     --sancor: #2D2D33;
     --sancor-glow: #FF3DA0;
@@ -2235,6 +2237,424 @@
   }
   .closing .right a { color: var(--cyan); text-decoration: none; }
 
+  /* === GRACIAS · CIERRE === */
+  .gracias {
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(229,9,127,0.07), transparent 70%),
+      linear-gradient(180deg, var(--bg-night) 0%, var(--bg-deep) 100%);
+    padding: 90px 7vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .gracias-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+  .gracias-eyebrow::before,
+  .gracias-eyebrow::after {
+    content: '';
+    width: 48px;
+    height: 1px;
+    background: var(--cyan);
+  }
+  .gracias-display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(120px, 22vw, 360px);
+    line-height: 0.85;
+    color: var(--bone);
+    letter-spacing: -0.01em;
+    margin-bottom: 30px;
+  }
+  .gracias-display em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cyan);
+    letter-spacing: 0;
+  }
+  .gracias-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(22px, 2.3vw, 36px);
+    color: var(--bone-dim);
+    max-width: 720px;
+    margin: 0 auto 56px;
+    line-height: 1.35;
+  }
+  .gracias-sign {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--mute);
+    text-transform: uppercase;
+    line-height: 1.9;
+  }
+  .gracias-sign a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  /* === DEMOS · APENDICE === */
+  .demos {
+    background: var(--bg-deep);
+    padding: 90px 7vw;
+  }
+  .demos-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .demos-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--cyan);
+  }
+  .demos-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6.2vw, 96px);
+    line-height: 0.92;
+    color: var(--bone);
+    margin-bottom: 18px;
+    letter-spacing: -0.005em;
+  }
+  .demos-title em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cyan);
+  }
+  .demos-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--bone-dim);
+    max-width: 720px;
+    margin-bottom: 50px;
+  }
+  .demos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .demo-card {
+    position: relative;
+    border: 1px solid var(--line);
+    background: rgba(20,20,26,0.6);
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.3s ease;
+  }
+  .demo-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-2px);
+  }
+  .demo-card.landscape { aspect-ratio: 16 / 9; }
+  .demo-card.square { aspect-ratio: 1 / 1; }
+  .demo-card.portrait { aspect-ratio: 3 / 4; }
+  .demo-card video,
+  .demo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .demo-card .demo-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    gap: 8px;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 18px,
+        rgba(255,255,255,0.012) 18px,
+        rgba(255,255,255,0.012) 19px
+      );
+  }
+  .demo-card .demo-empty span:first-child {
+    font-size: 28px;
+    color: var(--line);
+  }
+  .demo-card .demo-meta {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 14px 16px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+    z-index: 2;
+  }
+  .demo-card .demo-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    border: 1px solid var(--cyan);
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .demo-card .demo-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: var(--bone);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .demo-sound {
+    position: absolute;
+    top: 12px; right: 12px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--bone);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+  .demo-sound:hover {
+    border-color: var(--cyan);
+    background: rgba(229,9,127,0.25);
+    color: var(--bone);
+  }
+  .demo-sound svg {
+    width: 16px; height: 16px;
+    pointer-events: none;
+  }
+  .demo-sound .icon-on { display: none; }
+  .demo-sound.is-on .icon-off { display: none; }
+  .demo-sound.is-on .icon-on { display: block; }
+  .demo-sound.is-on {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--bg-deep);
+  }
+  .demos-footer {
+    margin-top: 36px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+  }
+  @media (max-width: 1100px) {
+    .demos-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .demos-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === AVISOS & IMÁGENES (MASONRY) === */
+  .imagenes {
+    background: var(--bg-deep);
+    padding: 90px 7vw;
+  }
+  .imagenes-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .imagenes-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--cyan);
+  }
+  .imagenes-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6.2vw, 96px);
+    line-height: 0.92;
+    color: var(--bone);
+    margin-bottom: 18px;
+    letter-spacing: -0.005em;
+  }
+  .imagenes-title em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cyan);
+  }
+  .imagenes-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--bone-dim);
+    max-width: 720px;
+    margin-bottom: 40px;
+  }
+  .imagenes-masonry {
+    column-count: 4;
+    column-gap: 14px;
+  }
+  .imagenes-masonry .img-tile {
+    break-inside: avoid;
+    margin-bottom: 14px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--bg-night);
+    transition: border-color 0.25s ease, transform 0.3s ease;
+    display: block;
+  }
+  .imagenes-masonry .img-tile:hover {
+    border-color: var(--cyan);
+    transform: translateY(-2px);
+  }
+  .imagenes-masonry .img-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 1400px) {
+    .imagenes-masonry { column-count: 3; }
+  }
+  @media (max-width: 900px) {
+    .imagenes-masonry { column-count: 2; }
+  }
+  @media (max-width: 540px) {
+    .imagenes-masonry { column-count: 1; }
+  }
+
+  /* === STORYBOARDS · PROCESO === */
+  .storyboards {
+    background:
+      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-night) 100%);
+    padding: 90px 7vw;
+  }
+  .sb-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sb-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--cyan);
+  }
+  .sb-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6.2vw, 96px);
+    line-height: 0.92;
+    color: var(--bone);
+    margin-bottom: 18px;
+    letter-spacing: -0.005em;
+  }
+  .sb-title em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cyan);
+  }
+  .sb-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--bone-dim);
+    max-width: 760px;
+    margin-bottom: 50px;
+  }
+  .sb-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .sb-card {
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--bg-night);
+    transition: border-color 0.25s ease, transform 0.3s ease;
+  }
+  .sb-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-2px);
+  }
+  .sb-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .sb-meta {
+    padding: 14px 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+  .sb-meta .sb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+  }
+  .sb-meta .sb-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--cyan);
+    line-height: 1;
+  }
+  .sb-footer {
+    margin-top: 36px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+  }
+  @media (max-width: 900px) {
+    .sb-grid { grid-template-columns: 1fr; }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 980px) {
     .ctx-grid, .tend-grid, .terr-grid, .phones, .roles, .benchmarks, .next-steps,
@@ -4372,7 +4792,7 @@
 
   <p class="next-tag">Para arrancar el sistema</p>
   <p class="editorial next-text">
-    Sancor tiene <em>80 años</em><br>de historias reales.<br>Vamos a escribir los<br>próximos <em>80.</em>
+    Sancor tiene <em>80 años</em><br>de historias reales.<br>Vamos a escribir los<br>próximos <em>80 años.</em>
   </p>
 
   <div class="next-steps">
@@ -4405,6 +4825,270 @@
   </div>
 </section>
 
+<!-- ============================== S22 / GRACIAS ============================== -->
+<section class="gracias">
+  <div class="slide-tag">21 · CIERRE</div>
+
+  <p class="gracias-eyebrow">WTF × Sancor · 2026</p>
+
+  <h1 class="gracias-display">GRACIAS<em>.</em></h1>
+
+  <p class="gracias-sub">
+    Por escucharnos. Ahora vamos a <em>demostrarlo.</em>
+  </p>
+
+  <p class="gracias-sign">
+    WTF AGENCY · BUENOS AIRES<br>
+    <a href="mailto:hello@wtf-agency.com">hello@wtf-agency.com</a>
+  </p>
+</section>
+
+<!-- ============================== S23 / DEMOS ============================== -->
+<section class="demos dense">
+  <div class="slide-tag">22 · APÉNDICE</div>
+
+  <p class="demos-eyebrow">Apéndice · Bonus material</p>
+  <h2 class="demos-title">DEMOS · <em>avisos &amp; videos.</em></h2>
+  <p class="demos-sub">
+    Pruebas, prototipos y piezas de referencia que podemos producir hoy con el motor IA + criterio creativo. Todo lo que ves acá fue hecho por el equipo WTF.
+  </p>
+
+  <div class="demos-grid">
+
+    <!-- DEMO 01 · Video vertical -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 01 — Cinematográfico</p>
+      </div>
+    </div>
+
+    <!-- DEMO 02 · Video vertical -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 02 — Cinematográfico</p>
+      </div>
+    </div>
+
+    <!-- DEMO 03 · Video vertical -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/video_ComfyUI_00003_%20%282%29.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 03 — IA generativo</p>
+      </div>
+    </div>
+
+    <!-- DEMO 04 · Video horizontal -->
+    <div class="demo-card landscape">
+      <video src="contenidos%20demo/video_ComfyUI_00003_%20%283%29.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">YouTube · 16:9</span>
+        <p class="demo-name">Demo 04 — Hero film</p>
+      </div>
+    </div>
+
+    <!-- DEMO 05 · Video vertical -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/video_ComfyUI_00004_.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 05 — IA generativo</p>
+      </div>
+    </div>
+
+    <!-- DEMO 06 · Video vertical Higgsfield -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/hf_20260505_181200_78bd52c4-95f2-4190-9664-c0a0f64827d1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 06 — Higgsfield</p>
+      </div>
+    </div>
+
+    <!-- DEMO 07 · Video vertical Higgsfield -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/hf_20260505_185044_d86ce759-4e63-4ae6-882e-52c96815024e%20%281%29.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 07 — Higgsfield</p>
+      </div>
+    </div>
+
+    <!-- DEMO 08 · Video vertical WhatsApp -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/WhatsApp%20Video%202026-05-06%20at%2000.40.36.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 08 — Pieza completa</p>
+      </div>
+    </div>
+
+    <!-- DEMO 09 · Video vertical -->
+    <div class="demo-card">
+      <video src="contenidos%20demo/1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="demo-sound" aria-label="Activar sonido">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+      <div class="demo-meta">
+        <span class="demo-tag">Reel · 9:16</span>
+        <p class="demo-name">Demo 09 — Cinematográfico</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="demos-footer">Producido por WTF · Demos reales del motor IA + criterio creativo</p>
+</section>
+
+
+<!-- ============================== S24 / IMÁGENES ============================== -->
+<section class="imagenes dense">
+  <div class="slide-tag">23 · APÉNDICE · IMÁGENES</div>
+
+  <p class="imagenes-eyebrow">Apéndice · Avisos &amp; piezas estáticas</p>
+  <h2 class="imagenes-title">PIEZAS · <em>avisos &amp; mockups.</em></h2>
+  <p class="imagenes-sub">
+    Catálogo completo de piezas estáticas: avisos, mockups de feed y stories, key visuals, generaciones IA y referencias de territorio. Producido por WTF.
+  </p>
+
+  <div class="imagenes-masonry">
+    <div class="img-tile"><img src="contenidos%20demo/353f265aad90f5881aa335e646e53a45b513917c50d99d2840d8841073daf508.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/4d0d64e3ed37beeae6ffe8f9b9c2276d17083c2cece7426f464f5e83efe06631.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/7de2cb8ace739d5c9d44bbe94736e67ead20bcf1ea74c5449dcbf778d92a0838.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/9f099b6f3426f6e9304d95bdeaf4c60f71c6f6b0d27278ab3ae153bfb396d3e0.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.20.48%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.22.39%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.22.41%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.22.46%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.24.29%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.24.35%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.24.39%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/Screenshot%202026-05-06%20at%209.24.46%E2%80%AFAM.png" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.03.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.04%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.04%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.05%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.05%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.05.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.06%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.06%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.06.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.07%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.07.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.08%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.08%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.08.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.09%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.09%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.09.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.57.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.58%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.58%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.58.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.59%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.59%20%282%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.58.59.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.59.00%20%281%29.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.59.00.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/WhatsApp%20Image%202026-03-19%20at%2013.59.01.jpeg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/b8a66c8c0425d871f856c18b23b329589131aab843b8f1831876ace88ddc1297.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/d321dbcd50b451f1436cfd8dd70807aee61e72f748e589f8e2732e40a531d04c.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/magnific_a-lowangle-candid-in-move_2555619425.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/magnific_change-the-basil-leaves-a_2555215830.jpg" alt="" loading="lazy" /></div>
+    <div class="img-tile"><img src="contenidos%20demo/magnific_highly-realistic-shot-of-_2564108681.jpeg" alt="" loading="lazy" /></div>
+  </div>
+
+</section>
+
+
+<!-- ============================== S25 / STORYBOARDS ============================== -->
+<section class="storyboards dense">
+  <div class="slide-tag">24 · APÉNDICE · STORYBOARDS</div>
+
+  <p class="sb-eyebrow">Apéndice · Proceso creativo</p>
+  <h2 class="sb-title">STORYBOARDS · <em>cómo se piensa una pieza.</em></h2>
+  <p class="sb-sub">
+    Antes de cada producción, el storyboard. Para alinear visión, cuadrar timing y aprobar dirección de arte sin sorpresas. Acá una muestra del proceso.
+  </p>
+
+  <div class="sb-grid">
+    <div class="sb-card">
+      <img src="contenidos%20demo/storyboards/2cd7621e-923e-44cb-a140-fe48365d1573.jpg" alt="" loading="lazy" />
+      <div class="sb-meta">
+        <span class="sb-label">Storyboard · Confirmado</span>
+        <span class="sb-num">01</span>
+      </div>
+    </div>
+    <div class="sb-card">
+      <img src="contenidos%20demo/storyboards/eb7dcdc6-861c-4769-845e-8ff5e5c24419.jpg" alt="" loading="lazy" />
+      <div class="sb-meta">
+        <span class="sb-label">Storyboard · Viaje que se confirma solo</span>
+        <span class="sb-num">02</span>
+      </div>
+    </div>
+    <div class="sb-card">
+      <img src="contenidos%20demo/storyboards/f301172c-7703-4274-9616-80cb12a56713.jpg" alt="" loading="lazy" />
+      <div class="sb-meta">
+        <span class="sb-label">Storyboard · La noche no te frena</span>
+        <span class="sb-num">03</span>
+      </div>
+    </div>
+    <div class="sb-card">
+      <img src="contenidos%20demo/storyboards/287cdcb1-3ee9-406c-9b26-e104c33fa23d.jpg" alt="" loading="lazy" />
+      <div class="sb-meta">
+        <span class="sb-label">Character reference · Jorge</span>
+        <span class="sb-num">04</span>
+      </div>
+    </div>
+    <div class="sb-card">
+      <img src="contenidos%20demo/storyboards/43cd46de-62b0-4251-93d2-eabbde6a90e6.jpg" alt="" loading="lazy" />
+      <div class="sb-meta">
+        <span class="sb-label">Character reference · Lara</span>
+        <span class="sb-num">05</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="sb-footer">3 storyboards · 2 character references · Producido por WTF</p>
+</section>
+
 <div class="cursor-dot" id="cursorDot"></div>
 
 <script>
@@ -4421,7 +5105,7 @@
     'Cover', 'Prólogo', 'Contexto', 'Desafío', 'Quiénes somos',
     'Tendencias 2026', 'Insight', 'Concepto', 'Claim', 'Estrategia',
     'Personaje Sancor', 'Motor', 'Capacidades', 'Multi-ángulo', 'UGC',
-    'Pipeline 2026', 'Ejecución', 'KPIs', 'Equipo', 'Próximo paso'
+    'Pipeline 2026', 'KPIs', 'Equipo', 'Próximo paso', 'Gracias', 'Demos', 'Imágenes', 'Storyboards'
   ];
 
   const hudCurr = document.getElementById('hudCurr');
@@ -4545,6 +5229,37 @@
       }
     }
   }
+
+  /* === Demo sound toggles (mute/unmute, exclusive) === */
+  document.querySelectorAll('.demo-sound').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.demo-card');
+      const video = card && card.querySelector('video');
+      if (!video) return;
+
+      const turningOn = video.muted;
+      if (turningOn) {
+        document.querySelectorAll('.demo-card video').forEach(v => {
+          if (v !== video) {
+            v.muted = true;
+            const otherBtn = v.parentElement.querySelector('.demo-sound');
+            if (otherBtn) otherBtn.classList.remove('is-on');
+          }
+        });
+        video.muted = false;
+        video.volume = 1;
+        const playPromise = video.play();
+        if (playPromise) playPromise.catch(() => {});
+        btn.classList.add('is-on');
+        btn.setAttribute('aria-label', 'Silenciar');
+      } else {
+        video.muted = true;
+        btn.classList.remove('is-on');
+        btn.setAttribute('aria-label', 'Activar sonido');
+      }
+    });
+  });
 
   /* === Auto-tag interactive grids as reveal === */
   document.querySelectorAll('.tend-card, .terr-cell, .pj-card, .role, .stack-tool, .ugc-step, .ugc-tier, .cal-month, .inv-tier, .next-step, .matrix-row:not(.header), .bm-card, .stat, .pp-step').forEach(el => {
