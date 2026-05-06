@@ -1440,9 +1440,14 @@
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1px; background: var(--line); border: 1px solid var(--line);
   }
-  .compare-side { background: var(--bg-night); padding: 40px 36px; }
-  .compare-side.bad { background: rgba(110,110,120,0.05); }
-  .compare-side.good { background: rgba(229,9,127,0.05); }
+  .compare-side {
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 40px 36px;
+  }
+  .compare-side.bad { background: rgba(0,0,0,0.65); }
+  .compare-side.good { background: rgba(0,0,0,0.65); }
   .compare-side .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px; letter-spacing: 0.2em;
@@ -3254,7 +3259,7 @@
         <div class="micro">8 encuentros + cierre · Productores 2025</div>
       </div>
       <div class="pt-cell">
-        <div class="value">Storytelling 1995</div>
+        <div class="value">Storytelling Clásico</div>
         <div class="micro">"Más vale prevenir"</div>
       </div>
     </div>
@@ -3391,7 +3396,7 @@
     </div>
     <div class="tend-card">
       <div class="tag">03 · ROI Emocional</div>
-      <h3>NO ES PRECIO.<br>ES JUSTIFICACIÓN.</h3>
+      <h3>NO ES SOLO PRECIO.<br>ES JUSTIFICACIÓN.</h3>
       <p>
         Los consumidores ya no compran por impulso. Eligen marcas que <em>explican qué las hace valiosas</em> y por qué vale la pena. La rentabilidad emocional manda sobre la promo tradicional.
       </p>
@@ -3399,20 +3404,6 @@
     </div>
   </div>
 
-  <div class="tend-belt">
-    <span class="tend-pill hot">Workflow IA + Humano (Human-in-the-Loop)</span>
-    <span class="tend-pill">Hyper-personalization a escala</span>
-    <span class="tend-pill">Total Search · SEO + LLM</span>
-    <span class="tend-pill hot">Series originales (57% lo demanda)</span>
-    <span class="tend-pill">Hook ≤ 3 segundos</span>
-    <span class="tend-pill">Plataforma-nativo (no repurpose)</span>
-    <span class="tend-pill hot">Creator + brand combinados (+7.5% awareness)</span>
-    <span class="tend-pill">Live commerce</span>
-    <span class="tend-pill">Audio nativo sincronizado en video IA</span>
-    <span class="tend-pill">Series de creadores, no spots únicos</span>
-    <span class="tend-pill">Brand lift studies trimestrales</span>
-    <span class="tend-pill">Comments-as-content (commerce social)</span>
-  </div>
 </section>
 
 <!-- ============================== S6.5 / PUENTE NARRATIVO ============================== -->
@@ -3468,7 +3459,7 @@
 
   <div class="concepto-manifesto">
     <p>
-      La categoría seguros vendió promesas durante 80 años. Sancor puede vender otra cosa. Lo único que el cliente realmente quiere: <strong>la prueba.</strong>
+      La categoría seguros vendió promesas durante años. Sancor puede vender otra cosa. Lo único que el cliente realmente quiere: <strong>la prueba.</strong>
     </p>
     <p>
       No vamos a prometer tranquilidad. Vamos a <strong>mostrarla.</strong> Cada lunes. Cada lluvia. Cada llegada a tiempo. Cada caso real resuelto en 90 minutos. Cada productor que conoce a sus clientes por el nombre.
@@ -3490,7 +3481,7 @@
   <div class="slide-tag">10 · CLAIM</div>
   <div class="slide-num">XI / XXI</div>
 
-  <div class="claim-tag reveal">Plataforma de marca · 2026</div>
+  <div class="claim-tag reveal">Plataforma de marca Sancor Seguros Automotor · 2026</div>
   <h2 class="display claim-text reveal delay-1">
     TRANQUILIDAD<br>QUE <em>se mueve.</em>
   </h2>
@@ -3621,7 +3612,7 @@
       <div class="pj-attr">FUNCIONAL · DATOS · TIEMPOS</div>
       <div class="pj-block">
         <div class="pj-label">Aparece como</div>
-        <p class="pj-text">Notificación, ETA, nombre del grúero. La marca entra al final, chiquita, después de demostrar.</p>
+        <p class="pj-text">Notificación, nombre del conductor. La marca entra al final, chiquita, después de demostrar.</p>
       </div>
       <div class="pj-block">
         <div class="pj-label">No hace</div>
@@ -3754,7 +3745,7 @@
       </div>
       <div class="compare-side good">
         <div class="label">Sistema WTF AI</div>
-        <div class="big"><span class="counter" data-target="240" data-suffix="+">0</span></div>
+        <div class="big"><span class="counter" data-target="240" data-suffix="+" data-delay="1100">0</span></div>
         <p class="what">Mismo presupuesto · always-on · 5 territorios · iteración semanal · plataforma-nativo</p>
         <div class="grid-pop-wrap">
           <div class="grid-pop-label">Output anual</div>
@@ -3888,7 +3879,7 @@
     Una idea, <em>infinitas vidas.</em>
   </h2>
   <p class="matriz-sub">
-    Cada concepto se piensa para correr en formato vertical, horizontal, square, audio-only y display. Cada plataforma recibe la versión nativa, no un repurpose. Multi-ángulo es el unidad mínima de producción.
+    Una idea no se recorta. <strong>Se desdobla.</strong> Vertical, horizontal, square, audio, display — cada plataforma con su versión nativa. Porque hablar igual en todos lados es <em>no hablar en ninguno.</em>
   </p>
 
   <div class="matrix-table">
@@ -4181,9 +4172,6 @@
   <div class="slide-num">XVIII / XXI</div>
 
   <div class="eyebrow">Mockups · Tres formatos · Tres territorios</div>
-  <h2 class="display ejec-title">
-    Cómo se ve el <em>sistema en pantalla.</em>
-  </h2>
 
   <div class="phones">
     <div class="reveal">
@@ -4341,7 +4329,7 @@
     Lo que pasó cuando otras<br>aseguradoras <em>se animaron.</em>
   </h2>
   <p class="kpi-sub">
-    No estamos inventando. Las aseguradoras que rompieron con el manual de la categoría obtuvieron resultados verificables. Estos son los benchmarks contra los que vamos a medir Sancor en 2026.
+    No estamos inventando. Las aseguradoras que rompieron con el manual de la categoría obtuvieron resultados verificables.
   </p>
 
   <div class="benchmarks">
@@ -4438,12 +4426,7 @@
     </div>
   </div>
 
-  <div class="eyebrow" style="margin-top:30px;">Estructura de inversión · 3 fases</div>
-  <h3 class="display celula-title" style="font-size: clamp(40px, 5.5vw, 80px); margin-bottom: 50px;">
-    Tres fases. <em>Compromiso escalado.</em>
-  </h3>
-
-  <div class="inv-grid">
+  <div class="inv-grid" style="margin-top:50px;">
     <div class="inv-tier">
       <div class="name">FASE 01</div>
       <div class="who">Discovery + Set-Up</div>
@@ -4593,7 +4576,8 @@
       });
       // Counters
       slide.querySelectorAll('.counter').forEach((el, i) => {
-        setTimeout(() => animateCounter(el), 250 + i * 70);
+        const extra = parseInt(el.dataset.delay || '0', 10);
+        setTimeout(() => animateCounter(el), 250 + i * 70 + extra);
       });
       // SVG draws & grid pops
       slide.querySelectorAll('.pipe-line-svg, .grid-pop').forEach(el => {
