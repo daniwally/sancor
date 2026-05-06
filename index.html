@@ -2368,6 +2368,50 @@
   .demo-card.landscape { aspect-ratio: 16 / 9; }
   .demo-card.square { aspect-ratio: 1 / 1; }
   .demo-card.portrait { aspect-ratio: 3 / 4; }
+  .demo-card.fourbyfive { aspect-ratio: 4 / 5; }
+  .demos-divider {
+    margin: 50px 0 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .demos-divider h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 3.4vw, 52px);
+    color: var(--bone);
+    letter-spacing: -0.005em;
+    line-height: 1;
+  }
+  .demos-divider h3 em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cyan);
+  }
+  .demos-divider .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--mute);
+    text-transform: uppercase;
+  }
+  .avisos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 1100px) {
+    .avisos-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 800px) {
+    .avisos-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .avisos-grid { grid-template-columns: 1fr; }
+  }
   .demo-card video,
   .demo-card img {
     width: 100%;
@@ -4998,6 +5042,120 @@
       </div>
     </div>
 
+  </div>
+
+  
+  <div class="demos-divider">
+    <h3>AVISOS · <em>piezas estáticas.</em></h3>
+    <span class="label">15 templates · IG / Print</span>
+  </div>
+
+  <div class="avisos-grid">
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-01-headline.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 01 · Headline</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-04-features-benefits.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 04 · Features Benefits</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-05-bullet-points.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 05 · Bullet Points</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-07-us-vs-them.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 07 · Us Vs Them</p>
+      </div>
+    </div>
+    <div class="demo-card">
+      <img src="contenidos%20demo/avisos%20demo/template-08-before-after-ugc.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 08 · Before After Ugc</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-09-negative-marketing.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 09 · Negative Marketing</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-10-press-editorial.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 10 · Press Editorial</p>
+      </div>
+    </div>
+    <div class="demo-card square">
+      <img src="contenidos%20demo/avisos%20demo/template-13-stat-surround-hero.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 13 · Stat Surround Hero</p>
+      </div>
+    </div>
+    <div class="demo-card square">
+      <img src="contenidos%20demo/avisos%20demo/template-15-social-comment-screenshot.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 15 · Social Comment Screenshot</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-20-advertorial-editorial.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 20 · Advertorial Editorial</p>
+      </div>
+    </div>
+    <div class="demo-card square">
+      <img src="contenidos%20demo/avisos%20demo/template-21-bold-statement.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 21 · Bold Statement</p>
+      </div>
+    </div>
+    <div class="demo-card square">
+      <img src="contenidos%20demo/avisos%20demo/template-25-us-vs-them-color-split.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 25 · Us Vs Them Color Split</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-26-stat-callout-lifestyle.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 26 · Stat Callout Lifestyle</p>
+      </div>
+    </div>
+    <div class="demo-card">
+      <img src="contenidos%20demo/avisos%20demo/template-32-ugc-story-callout.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 32 · Ugc Story Callout</p>
+      </div>
+    </div>
+    <div class="demo-card fourbyfive">
+      <img src="contenidos%20demo/avisos%20demo/template-40-post-it-note-style.jpg" alt="" loading="lazy" />
+      <div class="demo-meta">
+        <span class="demo-tag">Static · IG / Print</span>
+        <p class="demo-name">Aviso 40 · Post It Note Style</p>
+      </div>
+    </div>
   </div>
 
   <p class="demos-footer">Producido por WTF · Demos reales del motor IA + criterio creativo</p>
